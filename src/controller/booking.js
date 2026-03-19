@@ -77,3 +77,41 @@ exports.getBookings = async (req, res, next) => {
     next(error);
   }
 };
+
+
+// GET /bookings/stats
+exports.getBookingStats = async (req, res, next) => {
+  try {
+    const stats = await Booking.aggregate([
+      {
+        $group: {
+          _id: "$room",
+          totalBookings: { $sum: 1 },
+        },
+      },
+      {
+        $lookup: {
+          from: "rooms", // collection name in MongoDB
+          localField: "_id",
+          foreignField: "_id",
+          as: "room",
+        },
+      },
+      {
+        $unwind: "$room",
+      },
+      {
+        $project: {
+          _id: 0,
+          roomId: "$room._id",
+          roomName: "$room.name",
+          totalBookings: 1,
+        },
+      },
+    ]);
+
+    res.status(200).json(stats);
+  } catch (error) {
+    next(error);
+  }
+};
