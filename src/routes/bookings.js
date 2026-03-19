@@ -10,7 +10,7 @@ const router = express.Router();
 router.post("/book-room", bookRoom);
 router.get("/bookings", getBookings);
 
-// ✅ NEW ROUTE
+
 router.get("/bookings/stats", getBookingStats);
 
 module.exports = router;
