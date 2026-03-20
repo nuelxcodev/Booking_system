@@ -78,3 +78,11 @@ Form-data body: `image` (file)
 
 Success 200: `{ "url": "/uploads/<filename>" }`
 
+
+
+- A room can only be booked by one user at a time
+- Users already exist in the database; no authentication implemented
+- All bookings are confirmed automatically 
+- userId and roomId are required for booking
+- Only image files are accepted for uploads; stored in local uploads/
+- Endpoints are open; no authentication/authorization
