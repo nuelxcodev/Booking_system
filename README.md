@@ -25,7 +25,7 @@ A minimal hotel booking service using Express and MongoDB.
 
 Run:
 
-- `npm run node src/seedling.js`
+- `npm run seed`
 
 What it does:
 
