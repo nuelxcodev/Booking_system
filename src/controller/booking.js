@@ -2,15 +2,13 @@ const Booking = require("../models/bookings");
 const Room = require("../models/rooms");
 const mongoose = require("mongoose");
 
-// POST /book-room
-exports.bookRoom = async (req, res, next) => {
+const bookRoom = async (req, res, next) => {
   const session = await mongoose.startSession();
   session.startTransaction();
 
   try {
     const { userId, roomId } = req.body;
 
-    // Validation
     if (!userId || !roomId) {
       return res.status(400).json({ message: "userId and roomId are required" });
     }
@@ -52,8 +50,7 @@ exports.bookRoom = async (req, res, next) => {
   }
 };
 
-// GET /bookings
-exports.getBookings = async (req, res, next) => {
+const getBookings = async (req, res, next) => {
   try {
     const { status } = req.query;
 
@@ -78,9 +75,7 @@ exports.getBookings = async (req, res, next) => {
   }
 };
 
-
-// GET /bookings/stats
-exports.getBookingStats = async (req, res, next) => {
+const getBookingStats = async (req, res, next) => {
   try {
     const stats = await Booking.aggregate([
       {
@@ -114,4 +109,10 @@ exports.getBookingStats = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+};
+
+module.exports = {
+  bookRoom,
+  getBookings,
+  getBookingStats,
 };

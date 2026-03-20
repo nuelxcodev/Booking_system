@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const bookingSchema = new mongoose.Schema(
   {
     user: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     room: {
@@ -13,7 +14,12 @@ const bookingSchema = new mongoose.Schema(
     },
     status: {
       type: String,
+      enum: ["confirmed", "cancelled", "pending"],
       default: "confirmed",
+    },
+    bookingDate: {
+      type: Date,
+      default: Date.now,
     },
   },
   { timestamps: true }
