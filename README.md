@@ -32,7 +32,7 @@ What it does:
 
 ## 4. API
 
-## bonus User creation (test purpose)
+### User creation (test purpose)
 ### POST /api/users
 
 Request JSON:
