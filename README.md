@@ -1,6 +1,3 @@
-# Booking System API
-
-A minimal hotel booking service using Express and MongoDB.
 
 ## 1. Overview
 
