@@ -1,5 +1,5 @@
-const Booking = require("../models/booking.model");
-const Room = require("../models/room.model");
+const Booking = require("../models/bookings");
+const Room = require("../models/rooms");
 const mongoose = require("mongoose");
 
 // POST /book-room
@@ -91,7 +91,7 @@ exports.getBookingStats = async (req, res, next) => {
       },
       {
         $lookup: {
-          from: "rooms", // collection name in MongoDB
+          from: "rooms", 
           localField: "_id",
           foreignField: "_id",
           as: "room",
