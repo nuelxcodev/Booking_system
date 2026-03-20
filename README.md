@@ -4,9 +4,9 @@
 - `src/app.js`: entry point, routes mount, middleware.
 - `src/config/db.js`: MongoDB connection.
 - `src/models`: Mongoose schema definitions.
-- `src/controller`: business logic (async, centralized error-handling via `next(err)`).
+- `src/controller`: handles al (async, centralized error-handling via `next(err)`).
 - `src/routes`: API endpoints.
-- `src/middlewares/errorhandler.js`: global error formatter.
+- `src/middlewares/errorhandler.js`: global error handler.
 - `src/seeder.js`: data seeding script.
 
 ## 2. Setup
@@ -32,6 +32,7 @@ What it does:
 
 ## 4. API
 
+## bonus User creation (test purpose)
 ### POST /api/users
 
 Request JSON:
