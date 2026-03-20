@@ -79,6 +79,7 @@ Form-data body: `image` (file)
 Success 200: `{ "url": "/uploads/<filename>" }`
 
 
+### Assumptions:
 
 - A room can only be booked by one user at a time
 - Users already exist in the database; no authentication implemented
