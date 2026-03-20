@@ -3,7 +3,7 @@ const {
   bookRoom,
   getBookings,
   getBookingStats, 
-} = require("../controllers/booking.controller");
+} = require("../controller/booking");
 
 const router = express.Router();
 

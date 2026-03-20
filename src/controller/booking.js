@@ -91,7 +91,7 @@ exports.getBookingStats = async (req, res, next) => {
       },
       {
         $lookup: {
-          from: "rooms", 
+          from: "rooms",
           localField: "_id",
           foreignField: "_id",
           as: "room",
