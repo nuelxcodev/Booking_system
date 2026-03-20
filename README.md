@@ -81,7 +81,3 @@ Form-data body: `image` (file)
 
 Success 200: `{ "url": "/uploads/<filename>" }`
 
-## 5. Notes
-
-- No auth or password hashing included yet.
-- Use `nodemon` in dev mode: `npm run dev`.
