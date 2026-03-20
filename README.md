@@ -18,14 +18,14 @@ A minimal hotel booking service using Express and MongoDB.
 2. Add `.env` with:
    - `MONGO_URI` (required)
    - `PORT` (optional, defaults to 5000)
-3. `npm start` to run app
+3. `npm run dev` to run app
 4. Optional: `npm run seed` to populate sample data
 
 ## 3. Seed data
 
 Run:
 
-- `npm run seed`
+- `npm run node src/seedling.js`
 
 What it does:
 
